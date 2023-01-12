@@ -79,7 +79,6 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 .summary {
-  height: 100vh;
   background: url(./pics/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
