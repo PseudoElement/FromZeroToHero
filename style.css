@@ -51,7 +51,7 @@ a :visited {
 a:hover {
   text-decoration: none;
   color: blueviolet;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 ul li {
   list-style: inside;
@@ -93,10 +93,11 @@ header h1 {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 header .left,
 header .right {
-  width: 50%;
+  width: 45%;
 }
 header .right img {
   width: 100%;
@@ -104,53 +105,77 @@ header .right img {
   max-height: 400px;
   object-fit: fill;
 }
-header .left{
+header .left {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 1rem;
+  --border-size: 3px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #fccd4d 50%,
+      #f8b500 51%,
+      #fbdf93 100%
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  animation: bg-spin 3s linear infinite;
+}
+header .left:hover {
+  animation-play-state: paused;
+}
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }
 header .right {
-  border: none;
+  /* border: none; */
   position: relative;
   z-index: 0;
   min-height: 250px;
   min-width: 250px;
   border-radius: 10px;
   overflow: hidden;
-  padding: 5px;
+  padding: 15px;
 }
-header .right::before {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  left: -50%;
-  top: -50%;
-  width: 200%;
-  height: 200%;
-  background-color: #399953;
-  background-repeat: no-repeat;
-  background-size: 50% 50%, 50% 50%;
-  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-  background-image: linear-gradient(#399953, #399953),
-    linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33),
-    linear-gradient(#377af5, #377af5);
-  animation: rotate 4s linear infinite;
+header .right:before, header .right:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
 }
-header .right::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 6px;
-  top: 6px;
-  width: calc(100% - 12px);
-  height: calc(100% - 12px);
-  background: white;
-  border-radius: 5px;
-}
-@keyframes rotate {
-  100% {
-    transform: rotate(1turn);
-  }
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
 }
 main {
   margin-top: 1rem;
@@ -173,10 +198,10 @@ main {
   background-size: 100% 100%;
 }
 .swiper:hover {
-    animation: swiper-up;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    box-shadow: 0 7px 20px 0px rgb(231, 39, 248);
+  animation: swiper-up;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  box-shadow: 0 7px 20px 0px rgb(231, 39, 248);
 }
 @keyframes swiper-up {
   0% {
@@ -203,6 +228,7 @@ main {
 .swiper .slide .slide-info .slide-info_title {
   font-size: 2rem;
   text-align: center;
+  font-weight: 900;
 }
 .swiper .slide .slide-info .slide-info_description {
   font-size: 1.2rem;

@@ -104,10 +104,10 @@ swiper.addSlide({
 });
 swiper.addSlide({
   title: "WORK EXPERIENCE",
-  innerHTML: `<ul><li>Node.js && MongoDB: <a target="_blank" href="https://github.com/PseudoElement/Node-MongoDB">Node-MongoDB</a></li>
-  <li>HTML, CSS/SCSS, JavaScript: <a target="_blank" href="https://github.com/PseudoElement/WildBerriesClone">WildBerries-Clone</a>,
+  innerHTML: `<ul><li><b>Node.js && MongoDB:</b> <a target="_blank" href="https://github.com/PseudoElement/Node-MongoDB">Node-MongoDB</a></li>
+  <li><b>HTML, CSS/SCSS, JavaScript:</b> <a target="_blank" href="https://github.com/PseudoElement/WildBerriesClone">WildBerries-Clone</a>,
    <a target="_blank" href="https://pseudoelement.github.io/CourseWork_1/">AXIT</a></li>
-  <li>React: <a target="_blank" href="https://github.com/PseudoElement/my-app">My app</a></li>
+  <li><b>React:</b> <a target="_blank" href="https://github.com/PseudoElement/my-app">My app</a></li>
   </ul>`,
 });
 swiper.addEvents();
