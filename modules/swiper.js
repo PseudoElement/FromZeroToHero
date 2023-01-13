@@ -5,7 +5,7 @@ class Swiper {
     className: "swiper",
   });
   constructor(parentNode) {
-    parentNode.prepend(this.swiper);
+    parentNode.append(this.swiper);
   }
   createEl(tag = "div", { className, textContent, innerHTML }) {
     const el = document.createElement(tag);

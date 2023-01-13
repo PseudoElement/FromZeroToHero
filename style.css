@@ -75,11 +75,11 @@ h1 {
   font-size: 2.5rem;
 }
 body {
-  background-color: gray;
+  background: url(./pics/body-bg-blocks.jpg);
   font-family: "Nunito Sans", sans-serif;
 }
 .summary {
-  background: url(./pics/background.jpg);
+  background: url(./pics/red-BG.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -182,6 +182,17 @@ header .right:after {
 main {
   margin-top: 1rem;
 }
+main div.dancing-kid_wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 15;
+}
+img.dancing-kid{
+  width: 100px;
+}
 .swiper {
   position: relative;
   top: 0px;
@@ -195,15 +206,14 @@ main {
   height: 20rem;
   overflow: hidden;
   transition: all 0.5s;
-  box-shadow: 0 7px 20px 0px gray;
-  background: url(./pics/swiper-BG.webp);
-  background-size: 100% 100%;
+  box-shadow: 0 0px 30px 5px rgb(39, 39, 39);
+  background: -webkit-linear-gradient(top, rgba(216,224,222,1) 0%,rgba(174,191,188,1) 22%,rgba(153,175,171,1) 33%,rgba(142,166,162,1) 50%);
 }
 .swiper:hover {
   animation: swiper-up;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
-  box-shadow: 0 7px 20px 0px rgb(231, 39, 248);
+  box-shadow: 0 0px 30px 5px rgb(42, 0, 210);
 }
 @keyframes swiper-up {
   0% {
