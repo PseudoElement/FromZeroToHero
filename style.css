@@ -144,14 +144,13 @@ header .left:hover {
   initial-value: 0turn;
 }
 header .right {
-  /* border: none; */
+  border: none;
   position: relative;
   z-index: 0;
   min-height: 250px;
   min-width: 250px;
   border-radius: 10px;
-  overflow: hidden;
-  padding: 15px;
+  padding: 5px;	
 }
 header .right:before, header .right:after {
 	content: '';
@@ -176,6 +175,9 @@ header .right:before, header .right:after {
 	100% {
 		background-position: 0 0;
 	}
+}
+header .right:after {
+	filter: blur(50px);
 }
 main {
   margin-top: 1rem;
