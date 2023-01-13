@@ -75,11 +75,12 @@ h1 {
   font-size: 2.5rem;
 }
 body {
-  background: url(./pics/body-bg-blocks.jpg);
+  background: url(./pics/body-bg-blocks.jpg)no-repeat center center fixed;;
+  background-size: cover;
   font-family: "Nunito Sans", sans-serif;
 }
 .summary {
-  background: url(./pics/red-BG.jpg);
+  background: url(./pics/summary-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
